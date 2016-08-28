@@ -1,0 +1,22 @@
+<h1>Employees</h1>
+
+<table class="table"> 
+	<thead> 
+		<tr> 
+			<th>#</th> 
+			<th>First Name</th> 
+			<th>Last Name</th> 
+			<th>Access Level</th>
+			<th>Role (filtered)</th> 
+		</tr> 
+	</thead> 	
+	<tbody> 
+		<tr ng-repeat="employee in employees"> 
+			<th scope="row">{{employee.id}}</th> 
+			<td><a ng-href="#/employee/{{employee.id}}">{{employee.firstName}}</a></td> 
+			<td>{{employee.lastName}}</td> 
+			<td>{{employee.accessLevel}}</td> 
+			<td>{{employee.accessLevel | role}}</td> 
+		</tr> 
+	</tbody> 
+</table>

@@ -5,9 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-// var favicon = require('serve-favicon');
+var employees = require('./routes/employees');
+var employee = require('./routes/employee');
 
 
 var app = express();
@@ -28,6 +27,9 @@ if (app.get('env') === 'development') {
     // This covers serving up the index page
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
     app.use(express.static(path.join(__dirname, '../client/app')));
+
+    //for user's photo
+    app.use(express.static(path.join(__dirname, '/data')));
 
     // Error Handling
     app.use(function(err, req, res, next) {
@@ -58,5 +60,7 @@ if (app.get('env') === 'production') {
     });
 }
 
+app.use('/employees', employees);
+app.use('/employee', employee);
 
 module.exports = app;

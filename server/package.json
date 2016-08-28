@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET NODE_ENV=production nodemon \n ./bin/www",
+    "start": "SET NODE_ENV=production \n nodemon  ./bin/www",
     "test": "SET NODE_ENV=development=development \n nodemon ./bin/www"
   },
   "dependencies": {
@@ -11,7 +11,6 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.13.4",
-    "jade": "~1.11.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
   }
